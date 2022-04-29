@@ -1,63 +1,143 @@
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<style>
-h2 {text-shadow: -1px 0 black, 0 1px black,3px 0 #FFA500, 0 -1px black}
-</style>
-<title>Thitima.P</title>
-<link rel="stylesheet" href="ใส่ของตัวเอง">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Frist Leaflet</title>
+  <!-- Link Leaflet css and javascript -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
 </head>
-<body bgcolor="96CEB4">
-<FONT FACE="FC Muffin">
-<font size="7"><center><h2> 🎋 Bam's world. 🎋 </h2></center></font>
-<center><img src="picture.jpg/bm.JPG" width="230"height="350"></center>
-<font size="5">
-<center><h3><strong>WELCOME TO MY WEBSITE</strong></h3></center>
-<div style="border: 3px dashed #000000">
-  <style>
-   body
-    h3 {text-shadow: -1px 0 black, 0 1px black,1.5px 0 #FFA500, 0 -1px black}
-  </style>
-  <h3><strong><center> ALL ABOUT ME </center></strong></h3>
-<ul >
-  <li>Name : THITIMA PREETONG</li>
-  <li>Nickname : BAM</li>
-  <li>Birthday : 19 January 2000 </li>
-  <li>Age : 22 </li>
-  <li>Blood Type : O</li>
-  <li>I'm a junior in Srinakharinwirot University.</li>
-  <li>Mark is number one in my heart.</li>
-</ul></div>
-<br>
-<a href="Qgis2web.html">QGIS2WEB 🗺 </a>
-<!--table 2 -->
-<Table>
-<tr>
-<thead>
-<th>Types</th>
-<th>Skills</th>
-</thead>
-<tbody>
-<tr>
-<td>General Program</td>
-<td>Microsoft application</td>
-</tr>
-<tr>
-<td>Geoinformatics program</td>
-<td>QGIS</td>
-</tr>
-<tr>
-<td>Programming skills</td>
-<td>HTML, Python</td>
-</tr>
-</tbody>
-</tr>
-</Table>
-<font size="4.5"><center><p><strong><a href="signin.html">SING IN</a>&nbsp;/&nbsp;<a href="register.html">REGISTER</a>&nbsp;/&nbsp;<a href="index.html">MY WORLD</a>&nbsp;/&nbsp;<a href="hobbies.html">HOBBIESS</a>&nbsp;/&nbsp;<a href="contactme.html">CONTACT</a></strong></p></center>
-<br>
-</font>
-</FONT>
+<body>
+  <!-- divide map bounding box -->
+  <center>
+  <br>
+  <FONT FACE="DB Manit X" size = "10">
+  <strong><font color="#8B4513">Every single moment is an adventure,Enjoy various places in Seoul <b>Korea</b></a></FONT></strong>
+  </FONT><br>
+  <div id = "map" style = "width: 1500px ; height: 600px" </div>
+  <!-- set center and Link map-->
+  <script>
+    var map = L.map("map").setView([37.56097768554805, 126.96652647214829],13);
+
+    mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+
+    L.tileLayer('https://{s}.tile.thunderforest.com/neighbourhood/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; ' + mapLink,
+    maxZoom: 16,
+    }).addTo(map);
+
+    var greenIcon = L.icon({
+    iconUrl: "pedestrian.PNG",
+    shadowUrl: "",
+
+    iconSize: [45, 50], // size of the icon
+    shadowSize: [50, 64], // size of the shadow
+    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62], // the same for the shadow
+    popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+
+    var marker = L.marker([37.57966797578561,126.977035637131737],
+    {
+    icon: greenIcon,
+    draggable: true,
+    title: "พระราชวังคยองบกกุง",
+    opacity: 1.5
+     }).addTo(map)
+     .bindPopup("<b>Gyeongbokgung Palace</b>")
+     .openPopup();
+
+     var marker = L.marker([37.57909171042439, 126.98494163023223],
+     {
+     icon: greenIcon,
+     draggable: true,
+     title: "หมู่บ้านบุกชอนฮันอก",
+     opacity: 1.5
+      }).addTo(map)
+      .bindPopup("<b>Bukchon Hanok Village</b>")
+      .openPopup();
+
+      var marker = L.marker([37.551237406948815, 126.9882319665177],
+      {
+      icon: greenIcon,
+      draggable: true,
+      title: "โซล ทาวเวอร์",
+      opacity: 1.5
+       }).addTo(map)
+       .bindPopup("<b>N Seoul Tower</b>")
+       .openPopup();
+
+       var marker = L.marker([37.55958651564408, 126.9777121994708],
+       {
+       icon: greenIcon,
+       draggable: true,
+       title: " ตลาดนัมแดมุน  ",
+       opacity: 1.5
+        }).addTo(map)
+        .bindPopup("<b>Namdaemun Market")
+        .openPopup();
+
+        var marker = L.marker([37.57219777237916, 126.98675698390072],
+        {
+        icon: greenIcon,
+        draggable: true,
+        title: "อินซาดง",
+        opacity: 1.5
+         }).addTo(map)
+         .bindPopup("<b>Insadong</b>")
+         .openPopup();
+
+         var marker = L.marker([37.58405721288721, 126.98189261451361],
+         {
+         icon: greenIcon,
+         draggable: true,
+         title: "ถนนซัมชองดง",
+         opacity: 1.5
+          }).addTo(map)
+          .bindPopup("<b>Samcheongdong</b>")
+          .openPopup();
+
+          var marker = L.marker([37.54465936900398, 127.03748534586857],
+          {
+          icon: greenIcon,
+          draggable: true,
+          title: "สวนป่ากรุงโซล",
+          opacity: 1.5
+           }).addTo(map)
+           .bindPopup("<b>Seoul Forest</b>")
+           .openPopup();
+
+           var marker = L.marker([37.56916949056103, 126.97867456651684],
+           {
+           icon: greenIcon,
+           draggable: true,
+           title: "คลองชองเกชอน",
+           opacity: 1.5
+            }).addTo(map)
+            .bindPopup("<b>Cheonggyecheon</b>")
+            .openPopup();
+
+            var marker = L.marker([37.567789375636856, 126.88568726550714],
+            {
+            icon: greenIcon,
+            draggable: true,
+            title: "สวนสาธารณะฮานึล",
+            opacity: 1.5
+             }).addTo(map)
+             .bindPopup("<b>Haneul Park</b>")
+             .openPopup();
+
+             var marker = L.marker([37.51488600000415, 127.05737123664339],
+             {
+             icon: greenIcon,
+             draggable: true,
+             title: "วัดพงอึนซา",
+             opacity: 1.5
+              }).addTo(map)
+              .bindPopup("<b>Bongeunsa Temple</b>")
+              .openPopup();
+  </script>
+  </center>
 </body>
 </html>
