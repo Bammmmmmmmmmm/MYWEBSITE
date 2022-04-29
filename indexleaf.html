@@ -1,0 +1,143 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Frist Leaflet</title>
+  <!-- Link Leaflet css and javascript -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+</head>
+<body>
+  <!-- divide map bounding box -->
+  <center>
+  <br>
+  <FONT FACE="DB Manit X" size = "10">
+  <strong><font color="#8B4513">Every single moment is an adventure,Enjoy various places in Seoul <b>Korea</b></a></FONT></strong>
+  </FONT><br>
+  <div id = "map" style = "width: 1500px ; height: 600px" </div>
+  <!-- set center and Link map-->
+  <script>
+    var map = L.map("map").setView([37.56097768554805, 126.96652647214829],13);
+
+    mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+
+    L.tileLayer('https://{s}.tile.thunderforest.com/neighbourhood/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; ' + mapLink,
+    maxZoom: 16,
+    }).addTo(map);
+
+    var greenIcon = L.icon({
+    iconUrl: "pedestrian.PNG",
+    shadowUrl: "",
+
+    iconSize: [45, 50], // size of the icon
+    shadowSize: [50, 64], // size of the shadow
+    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62], // the same for the shadow
+    popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+
+    var marker = L.marker([37.57966797578561,126.977035637131737],
+    {
+    icon: greenIcon,
+    draggable: true,
+    title: "พระราชวังคยองบกกุง",
+    opacity: 1.5
+     }).addTo(map)
+     .bindPopup("<b>Gyeongbokgung Palace</b>")
+     .openPopup();
+
+     var marker = L.marker([37.57909171042439, 126.98494163023223],
+     {
+     icon: greenIcon,
+     draggable: true,
+     title: "หมู่บ้านบุกชอนฮันอก",
+     opacity: 1.5
+      }).addTo(map)
+      .bindPopup("<b>Bukchon Hanok Village</b>")
+      .openPopup();
+
+      var marker = L.marker([37.551237406948815, 126.9882319665177],
+      {
+      icon: greenIcon,
+      draggable: true,
+      title: "โซล ทาวเวอร์",
+      opacity: 1.5
+       }).addTo(map)
+       .bindPopup("<b>N Seoul Tower</b>")
+       .openPopup();
+
+       var marker = L.marker([37.55958651564408, 126.9777121994708],
+       {
+       icon: greenIcon,
+       draggable: true,
+       title: " ตลาดนัมแดมุน  ",
+       opacity: 1.5
+        }).addTo(map)
+        .bindPopup("<b>Namdaemun Market")
+        .openPopup();
+
+        var marker = L.marker([37.57219777237916, 126.98675698390072],
+        {
+        icon: greenIcon,
+        draggable: true,
+        title: "อินซาดง",
+        opacity: 1.5
+         }).addTo(map)
+         .bindPopup("<b>Insadong</b>")
+         .openPopup();
+
+         var marker = L.marker([37.58405721288721, 126.98189261451361],
+         {
+         icon: greenIcon,
+         draggable: true,
+         title: "ถนนซัมชองดง",
+         opacity: 1.5
+          }).addTo(map)
+          .bindPopup("<b>Samcheongdong</b>")
+          .openPopup();
+
+          var marker = L.marker([37.54465936900398, 127.03748534586857],
+          {
+          icon: greenIcon,
+          draggable: true,
+          title: "สวนป่ากรุงโซล",
+          opacity: 1.5
+           }).addTo(map)
+           .bindPopup("<b>Seoul Forest</b>")
+           .openPopup();
+
+           var marker = L.marker([37.56916949056103, 126.97867456651684],
+           {
+           icon: greenIcon,
+           draggable: true,
+           title: "คลองชองเกชอน",
+           opacity: 1.5
+            }).addTo(map)
+            .bindPopup("<b>Cheonggyecheon</b>")
+            .openPopup();
+
+            var marker = L.marker([37.567789375636856, 126.88568726550714],
+            {
+            icon: greenIcon,
+            draggable: true,
+            title: "สวนสาธารณะฮานึล",
+            opacity: 1.5
+             }).addTo(map)
+             .bindPopup("<b>Haneul Park</b>")
+             .openPopup();
+
+             var marker = L.marker([37.51488600000415, 127.05737123664339],
+             {
+             icon: greenIcon,
+             draggable: true,
+             title: "วัดพงอึนซา",
+             opacity: 1.5
+              }).addTo(map)
+              .bindPopup("<b>Bongeunsa Temple</b>")
+              .openPopup();
+  </script>
+  </center>
+</body>
+</html>
